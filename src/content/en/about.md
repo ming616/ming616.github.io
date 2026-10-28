@@ -15,9 +15,7 @@ Long-term research in artificial intelligence, natural language processing and m
 
 ### Career
 
-- 2026.01–present: Zhongyuan University of Technology, School of Artificial Intelligence — **Associate Professor**
-- 2025.01–2025.12: Zhongyuan University of Technology, School of Artificial Intelligence — Lecturer
-- 2013.05–2024.12: Zhongyuan University of Technology, School of Computer Science — Lecturer
+- Zhongyuan University of Technology, School of Artificial Intelligence — **Associate Professor**
 
 ### Research Projects
 
