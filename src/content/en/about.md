@@ -2,9 +2,22 @@
 
 **Associate Professor · Ph.D. · Master's Supervisor · School of Artificial Intelligence, Zhongyuan University of Technology**
 
-Ph.D. in Computer Software and Theory from Beijing Institute of Technology (2013). Research focuses on natural language processing, artificial intelligence, machine learning, big data, knowledge representation and intelligent software engineering.
+Long-term research in artificial intelligence, natural language processing and machine learning, focused on multimodal large models, knowledge representation and reasoning, and causal and explainable AI. Explores multi-source heterogeneous data modeling, cross-modal semantic alignment and causal-relationship modeling, with an aim to land research results in real industry scenarios such as smart healthcare & nursing, smart elder care, intelligent education, cross-border e-commerce and data-driven marketing.
 
-From February 2017 to February 2018, funded by the China Scholarship Council (CSC), conducted visiting-research work at the University of East Anglia (UEA), UK. Has also conducted academic exchanges at multiple universities in the UK, Australia and Portugal.
+### Education
+
+| Period | Institution | Field | Degree / Role |
+| --- | --- | --- | --- |
+| 2017.02–2018.02 | University of East Anglia (UEA), UK | Artificial Intelligence | Visiting Scholar (CSC-funded) |
+| 2008.09–2013.03 | Beijing Institute of Technology | Computer Software & Theory | Ph.D. |
+| 2002.09–2005.03 | Beijing Institute of Technology | Computer Science & Technology | M.S. |
+| 1998.09–2002.06 | Zhengzhou University | Computer Science & Technology | B.S. |
+
+### Career
+
+- 2026.01–present: Zhongyuan University of Technology, School of Artificial Intelligence — **Associate Professor**
+- 2025.01–2025.12: Zhongyuan University of Technology, School of Artificial Intelligence — Lecturer
+- 2013.05–2024.12: Zhongyuan University of Technology, School of Computer Science — Lecturer
 
 ### Research Projects
 
@@ -12,7 +25,7 @@ In recent years, hosted or participated in multiple projects from the NSFC, the 
 
 ### Publications
 
-40+ papers in NLP, knowledge representation, information extraction and machine learning, published in *Neurocomputing*, the *Chinese Journal of Computers*, *Acta Electronica Sinica*, the *Journal of Computer Science and Exploration*, the *Journal of Chinese Information Processing* and other venues (see [Publications](/en/publications)).
+40+ papers in NLP, knowledge representation, information extraction and machine learning (see [Publications](/en/publications)).
 
 ### Peer Review & Service
 
