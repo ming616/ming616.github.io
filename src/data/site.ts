@@ -33,12 +33,12 @@ export interface Section {
 
 export const sections: Section[] = [
   { slug: 'index', path: '/', zh: '首页', en: 'Home' },
-  { slug: 'research', path: '/research', zh: '研究方向', en: 'Research' },
-  { slug: 'publications', path: '/publications', zh: '论文成果', en: 'Publications' },
-  { slug: 'projects', path: '/projects', zh: '科研项目', en: 'Projects' },
-  { slug: 'code', path: '/code', zh: '研究代码', en: 'Code' },
-  { slug: 'team', path: '/team', zh: '团队与培养', en: 'Team' },
+  { slug: 'research', path: '/research', zh: '研究', en: 'Research' },
+  { slug: 'publications', path: '/publications', zh: '论文', en: 'Papers' },
+  { slug: 'projects', path: '/projects', zh: '项目', en: 'Projects' },
+  { slug: 'code', path: '/code', zh: '代码', en: 'Code' },
+  { slug: 'team', path: '/team', zh: '团队', en: 'Team' },
   { slug: 'teaching', path: '/teaching', zh: '教学', en: 'Teaching' },
-  { slug: 'collaboration', path: '/collaboration', zh: '合作方向', en: 'Collaboration' },
-  { slug: 'about', path: '/about', zh: '负责人简介', en: 'About' },
+  { slug: 'collaboration', path: '/collaboration', zh: '合作', en: 'Collab' },
+  { slug: 'about', path: '/about', zh: '简介', en: 'About' },
 ];

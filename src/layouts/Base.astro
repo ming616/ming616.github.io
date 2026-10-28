@@ -152,15 +152,17 @@ const pageTitle = (Astro.props.title as string | undefined)
 
       .site-nav {
         display: flex;
-        gap: 4px;
+        gap: 2px;
         margin-left: auto;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        flex: 1 1 auto;
+        justify-content: flex-end;
       }
       .site-nav a {
         color: var(--muted);
-        padding: 6px 10px;
+        padding: 6px 8px;
         border-radius: 6px;
-        font-size: 14px;
+        font-size: 13.5px;
         white-space: nowrap;
       }
       .site-nav a:hover { color: var(--fg); background: color-mix(in srgb, var(--accent) 12%, transparent); text-decoration: none; }
@@ -177,12 +179,33 @@ const pageTitle = (Astro.props.title as string | undefined)
       }
       .lang-toggle:hover { text-decoration: none; background: color-mix(in srgb, var(--accent) 10%, transparent); }
 
-      main { min-height: calc(100vh - var(--header-h) - 120px); padding: 40px 0 60px; }
+      main { min-height: calc(100vh - var(--header-h) - 120px); padding: 48px 0 60px; }
       main h1 { font-size: 30px; margin: 0 0 8px; }
       main h2 { font-size: 22px; margin-top: 36px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
       main h3 { font-size: 18px; margin-top: 24px; }
       main p, main li { color: var(--fg); }
       main .lead { color: var(--muted); font-size: 17px; margin-top: 0; }
+
+      /* Home hero: first heading is the name — make it a hero card. */
+      main article, main > div { }
+      main h2:first-of-type {
+        font-size: 40px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin: 0 0 4px;
+        border: none;
+        padding: 0;
+      }
+      main blockquote {
+        margin: 24px 0;
+        padding: 16px 20px;
+        border-left: 4px solid var(--accent);
+        background: color-mix(in srgb, var(--accent) 6%, transparent);
+        border-radius: 0 8px 8px 0;
+        font-size: 16px;
+        color: var(--fg);
+      }
+      main blockquote p { margin: 0; }
 
       table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 14px; }
       th, td { border: 1px solid var(--border); padding: 8px 12px; text-align: left; }
