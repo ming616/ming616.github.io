@@ -1,7 +1,211 @@
 ---
 import Base from '../../layouts/Base.astro';
-import MdContent from '../../content/en/index.md';
+import { identity, home } from '../../data/site';
+const h = home.en;
 ---
+
 <Base>
-  <MdContent />
+  <div class="profile-page">
+    <h1 class="page-title">Profile</h1>
+
+    <div class="layout">
+      <aside class="side-nav">
+        <p class="side-title">On this page</p>
+        <a href="#overview">Overview</a>
+        <a href="#research">Research</a>
+        <a href="#domains">Applications</a>
+        <a href="#contact">Contact</a>
+      </aside>
+
+      <main class="content">
+        <section id="overview" class="hero-card">
+          <div class="hero-left">
+            <h2 class="hero-name">{identity.nameEn}</h2>
+            <p class="hero-title">{identity.titleEn}</p>
+            <hr class="hero-rule" />
+            <ul class="contact-list">
+              <li>
+                <span class="ico">✉</span>
+                <a href={`mailto:${identity.email}`}>{identity.email}</a>
+              </li>
+              <li>
+                <span class="ico">☎</span>
+                <span>{identity.phone[0]}</span>
+              </li>
+              <li>
+                <span class="ico">⌂</span>
+                <a href="https://github.com/ming616" target="_blank" rel="noopener">GitHub: @{identity.github}</a>
+              </li>
+            </ul>
+          </div>
+          <img class="hero-photo" src="https://github.com/ming616.png" alt={identity.nameEn} />
+        </section>
+
+        <section class="aff-table">
+          <div class="aff-row">
+            <div class="aff-head">Affiliation</div>
+            <div class="aff-body">{identity.orgEn}</div>
+          </div>
+          <div class="aff-row">
+            <div class="aff-head">Summary</div>
+            <div class="aff-body">{h.tagline}</div>
+          </div>
+        </section>
+
+        <section id="research">
+          <h2 class="sec-title">{h.themesTitle}</h2>
+          <div class="theme-grid">
+            {h.themes.map((x) => (
+              <a class="theme-card" href="/en/research">
+                <span class="theme-tag">{x.en}</span>
+                <h3>{x.t}</h3>
+                <p>{x.d}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section id="domains">
+          <h2 class="sec-title">{h.domainsTitle}</h2>
+          <div class="chip-row">
+            {h.domains.map((d) => <span class="chip">{d}</span>)}
+          </div>
+        </section>
+
+        <section id="contact">
+          <h2 class="sec-title">{h.moreTitle}</h2>
+          <div class="more-row">
+            {h.moreLinks.map((l) => <a class="more-link" href={l.href}>{l.label} →</a>)}
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <style>
+    .profile-page { max-width: 1080px; margin: 0 auto; }
+    .page-title { font-size: 34px; font-weight: 800; margin: 0 0 28px; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .side-nav {
+      position: sticky;
+      top: calc(var(--header-h) + 20px);
+      background: color-mix(in srgb, var(--accent) 4%, transparent);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .side-title { margin: 0 16px 10px; font-weight: 700; font-size: 14px; color: var(--fg); }
+    .side-nav a { padding: 7px 16px; font-size: 14px; color: var(--accent); }
+
+    .hero-card {
+      display: flex;
+      gap: 24px;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 34px 38px;
+      scroll-margin-top: calc(var(--header-h) + 20px);
+    }
+    .hero-name { font-size: 40px; font-weight: 800; margin: 0; letter-spacing: -0.01em; }
+    .hero-title { margin: 8px 0 0; font-size: 16px; color: var(--muted); }
+    .hero-rule { border: none; border-top: 2px solid var(--accent); width: 220px; margin: 18px 0; }
+    .contact-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+    .contact-list li { display: flex; align-items: center; gap: 10px; font-size: 14.5px; }
+    .ico {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--accent) 12%, transparent);
+      color: var(--accent);
+      font-size: 13px;
+      flex: 0 0 auto;
+    }
+    .hero-photo {
+      width: 190px;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 6px;
+      flex: 0 0 auto;
+    }
+
+    .aff-table { margin-top: 18px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+    .aff-row { display: grid; grid-template-columns: 130px 1fr; }
+    .aff-row + .aff-row { border-top: 1px solid var(--border); }
+    .aff-head {
+      background: color-mix(in srgb, var(--accent) 5%, transparent);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 12px 16px;
+    }
+    .aff-body { padding: 12px 16px; font-size: 14.5px; line-height: 1.7; }
+
+    .sec-title { font-size: 20px; font-weight: 700; margin: 38px 0 14px; }
+    section { scroll-margin-top: calc(var(--header-h) + 20px); }
+
+    .theme-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .theme-card {
+      display: block;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      color: var(--fg);
+      transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+    }
+    .theme-card:hover {
+      text-decoration: none;
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+    .theme-tag {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 10%, transparent);
+      border-radius: 999px;
+      padding: 2px 10px;
+      margin-bottom: 8px;
+    }
+    .theme-card h3 { margin: 0 0 6px; font-size: 15.5px; }
+    .theme-card p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    .chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
+    .chip {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 15px;
+      font-size: 13.5px;
+      background: color-mix(in srgb, var(--accent) 4%, transparent);
+    }
+
+    .more-row { display: flex; flex-wrap: wrap; gap: 22px; }
+    .more-link { font-size: 14.5px; font-weight: 600; }
+
+    @media (max-width: 860px) {
+      .layout { grid-template-columns: 1fr; }
+      .side-nav { position: static; flex-direction: row; flex-wrap: wrap; padding: 8px; }
+      .side-title { width: 100%; margin: 6px 8px; }
+      .hero-card { flex-direction: column-reverse; text-align: center; padding: 26px 20px; }
+      .hero-rule { margin-left: auto; margin-right: auto; }
+      .contact-list { align-items: center; }
+      .hero-photo { width: 130px; height: 130px; }
+      .theme-grid { grid-template-columns: 1fr; }
+      .aff-row { grid-template-columns: 1fr; }
+    }
+  </style>
 </Base>
